@@ -1,0 +1,22 @@
+exam-portal/
+├── app/
+│   ├── admin/
+│   │   ├── dashboard/
+│   │   ├── students/
+│   │   ├── exams/
+│   │   └── results/
+│   ├── student/
+│   │   ├── dashboard/
+│   │   ├── exams/
+│   │   └── results/
+│   ├── api/
+│   │   ├── auth/
+│   │   ├── exams/
+│   │   ├── students/
+│   │   └── results/
+│   └── layout.js
+├── prisma/
+│   └── schema.prisma
+└── components/
+    ├── admin/
+    └── student/

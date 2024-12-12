@@ -1,0 +1,21 @@
+Key Technologies to Use:
+Frontend
+Next.js 14 with App Router
+Tailwind CSS for styling
+React Query for data fetching
+React Hook Form for forms
+PDF generation using react-pdf
+2. Backend
+Next.js API routes
+Prisma for database ORM
+PostgreSQL for database
+NextAuth.js for authentication
+JSON Web Tokens (JWT)
+Additional Libraries
+@tanstack/react-query for data management
+react-hook-form for form handling
+zod for validation
+react-pdf for PDF generation
+@prisma/client for database operations
+
+I want to build an exam portal in nextjs. With admin panel, where the admin sets questions and has access to the registered students. After the students submit their CBT exams, the admin can see the scores and the questions answered by the students including the correctly and incorrectly answered questions and can generate a pdf to send to the students.

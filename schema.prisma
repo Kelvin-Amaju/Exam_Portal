@@ -1,0 +1,49 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      Role     @default(STUDENT)
+  results   Result[]
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Exam {
+  id          String     @id @default(cuid())
+  title       String
+  duration    Int        // in minutes
+  questions   String
+  results     Result[]
+  isPublished Boolean    @default(false)
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Result {
+  id          String   @id @default(cuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  examId      String
+  exam        Exam     @relation(fields: [examId], references: [id])
+  score       Int
+  answers     Json     // Store student answers
+  submittedAt DateTime @default(now())
+}
+
+enum Role {
+  ADMIN
+  STUDENT
+}
